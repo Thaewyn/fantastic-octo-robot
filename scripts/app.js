@@ -1,4 +1,5 @@
 //some random app file
+var player;
 
 var monsterList = ["goblin", "warg", "ogre", "troll"];
 var monster;
@@ -6,6 +7,10 @@ var monster;
 var appController = {
     init: function() {
         console.log("initialize the app!");
+        player = {
+            hp: 100,
+            weapon: "stick"
+        }
         monster = this.makeMonster();
     },
     randomNumber: function(maximum, isInteger) {
@@ -15,6 +20,16 @@ var appController = {
         } else {
             return rand;
         }
+    },
+    weaponList: ["sword", "axe", "bow", "dagger"],
+    equipWeapon: function(whichWeapon, playerObj) {
+        console.log("equip a new weapon!");
+        if (playerObj) {
+            playerObj.weapon = this.weaponList[whichWeapon];
+        } else {
+            player.weapon = this.weaponList[whichWeapon];
+        }
+        return true;
     },
     makeMonster: function(whichMonster) {
         var newMonster = {
@@ -32,4 +47,7 @@ var appController = {
 
 appController.init();
 
+console.log("player is equipping a "+player.weapon);
+appController.equipWeapon(2);
+console.log("player is equipping a "+player.weapon);
 console.log("We have a monster! It's a "+monster.name);
