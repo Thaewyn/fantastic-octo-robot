@@ -1,4 +1,4 @@
 # fantastic-octo-robot
 
 === This is a project! ===
-* We are adding support for Google Maps API
+* I made an app.js file that has a couple of functions!
