@@ -19,10 +19,11 @@ var appController = {
     },
     weaponList: ["sword", "axe", "bow", "dagger"],
     equipWeapon: function(whichWeapon, playerObj) {
+        console.log("equip a new weapon!");
         if (playerObj) {
             playerObj.weapon = this.weaponList[whichWeapon];
         } else {
-            this.player.weapon = this.weaponList[whichWeapon];
+            player.weapon = this.weaponList[whichWeapon];
         }
         return true;
     }
@@ -30,4 +31,6 @@ var appController = {
 
 appController.init();
 
+console.log("player is equipping a "+player.weapon);
 appController.equipWeapon(2);
+console.log("player is equipping a "+player.weapon);
